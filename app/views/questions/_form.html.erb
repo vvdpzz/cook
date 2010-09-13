@@ -1,0 +1,10 @@
+<div id="editor">
+	<%= form_for(@question) do |f| %>
+	    <%= f.text_field :title,	:class => 'editor_element editor_title', :autocomplete => 'off' %>
+		<div id='wmd-button-bar'></div>
+	    <%= f.text_area :body,		:class => 'editor_element editor_body editor_fontstyle resizable', :id => 'wmd-input' %>
+		<div id='wmd-preview' class='editor_fontstyle'></div>
+		<%= f.text_field :tag_list, :autocomplete => autocomplete_tag_name_questions_path, :class => 'editor_element editor_tags' %>
+	    <%= f.submit %>
+	<% end %>
+</div>

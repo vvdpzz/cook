@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/vvdpzz/rails3-jquery-autocomplete
+  revision: 80295ef2244d2827c119062c5f6dc5077ad39741
+  specs:
+    rails3-jquery-autocomplete (0.2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -28,16 +34,18 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
+    acts-as-taggable-on (2.0.6)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
+    bluecloth (2.0.7)
     builder (2.1.2)
     devise (1.1.2)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
-    devise_openid_authenticatable (1.0.0.alpha6)
+    devise_openid_authenticatable (1.0.0.alpha7)
       devise (>= 1.0.6)
-      rack-openid (>= 1.0.3)
+      rack-openid (>= 1.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.4.1)
@@ -51,9 +59,9 @@ GEM
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
-    rack-openid (1.1.1)
-      rack (>= 0.4)
-      ruby-openid (>= 2.0.3)
+    rack-openid (1.2.0)
+      rack (>= 1.1.0)
+      ruby-openid (>= 2.1.8)
     rack-test (0.5.4)
       rack (>= 1.0)
     rails (3.0.0)
@@ -72,6 +80,7 @@ GEM
     rake (0.8.7)
     ruby-openid (2.1.8)
     thor (0.14.0)
+    thumbs_up (0.3.1)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
@@ -82,7 +91,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
+  bluecloth
   devise
   devise_openid_authenticatable
   mysql2
   rails (= 3.0.0)
+  rails3-jquery-autocomplete!
+  thumbs_up

@@ -2,11 +2,33 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
+# WEBSITE http://github.com/brianmario/mysql2
 gem 'mysql2'
 
+# WEBSITE http://github.com/plataformatec/devise
+# INSTALL rails g devise:install
+#         rails g devise User
+#         rails g devise:views
 gem 'devise'
 
+# WEBSITE http://github.com/nbudin/devise_openid_authenticatable
 gem 'devise_openid_authenticatable'
+
+# WEBSITE http://github.com/mbleigh/acts-as-taggable-on
+# INSTALL rails g acts_as_taggable_on:migration
+gem 'acts-as-taggable-on'
+
+# WEBSITE http://github.com/brady8/thumbs_up
+# INSTALL rails g thumbs_up
+gem 'thumbs_up'
+
+# Markdown
+gem 'bluecloth'
+
+# WEBSITE http://github.com/vvdpzz/rails3-jquery-autocomplete
+# INSTALL rails g autocomplete
+gem 'rails3-jquery-autocomplete', :git => 'git://github.com/vvdpzz/rails3-jquery-autocomplete'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -1,0 +1,127 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+ol,ul{
+	list-style:none;
+}
+blockquote,q{
+	quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none;
+}
+ins{
+	text-decoration:none;
+}
+del{
+	text-decoration:line-through;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+body{
+	color:#444;
+	font-family: 'Helvetica Neue',Helvetica,Tahoma,Geneva,Arial,sans-serif;
+	font-size:14px;
+	line-height:1;
+}
+code{
+	font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+	background-color:#eee;
+}
+pre{
+	font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+	margin-bottom:10px;
+	overflow:auto;
+	width:auto;
+	padding:5px;
+	background-color:#eee;
+	width:650px!ie7;
+	padding-bottom:20px!ie7;
+	max-height:600px;
+}
+pre{
+	max-height:none\9;
+}
+blockquote{
+	margin-bottom:10px;
+	padding:10px 10px 1px 10px;
+	border-left:4px solid #ffeb8e;
+	background-color:#fffdf4;
+	background-color:rgba(255,253,244,0.8);
+}
+b,strong{
+	font-weight:bold;
+}
+i,em{
+	font-style:italic;
+}
+ul{
+	list-style:disc;
+	margin-left:30px;
+	margin-bottom:1em;
+}
+ol li,ul li{
+	line-height:16px;
+}
+ol ul,ul ol,ul ul,ol ol{
+	margin-bottom:0;
+}
+p{
+	clear:both;
+	margin-bottom:1em;
+}
+ol{
+	list-style:decimal;
+	margin-left:30px;
+	margin-bottom:1em;
+}
+h1 {
+	font-size: 2em;
+	margin: .67em 0;
+}
+h2 {
+	font-size: 1.5em;
+	margin: .75em 0;
+}
+h3 {
+	font-size: 1.17em;
+	margin: .83em 0;
+}
+h4 {
+	font-size: 1em;
+	margin: 1.12em 0;
+}
+h5 {
+	font-size: .83em;
+	margin: 1.5em 0;
+}
+h6 {
+	font-size: .75em;
+	margin: 1.67em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bolder;
+}
+hr{
+	border:0;
+	color:#aaa;
+	background-color:#aaa;
+	height:1px;
+	margin-bottom:20px;
+}
+a {
+	color: #326AB3;
+	text-decoration:none;
+	cursor:pointer;
+}
+a:hover {
+	text-decoration:none;
+}

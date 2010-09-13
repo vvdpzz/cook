@@ -1,0 +1,27 @@
+#editor {
+	width:780px;
+}
+.editor_element {
+	float: left; width:100%;
+}
+.editor_title {
+	font-size:14px; border: 1px solid #999; padding: 3px;
+}
+.editor_body {
+	height: 200px; padding: 3px;
+}
+.editor_tags {
+	font-size:14px; border: 1px solid #999; padding: 3px;
+}
+.editor_fontstyle {
+	font-size: 14px; line-height: 1.2; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+}
+#wmd-preview {
+	width:100%; clear: both; border: 1px dotted #CCC;  padding: 3px; margin: 5px 0; white-space: pre-wrap; word-wrap: break-word;
+}
+textarea {
+	border: 1px solid #999;
+}
+.grippie {
+	background:#EEEEEE url(/images/grippie.png) no-repeat scroll center 2px; border-color:#DDDDDD; border-style:solid; border-width:0pt 1px 1px; cursor:s-resize; height:9px; overflow:hidden;
+}
