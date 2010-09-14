@@ -29,6 +29,10 @@ gem 'bluecloth'
 # INSTALL rails g autocomplete
 gem 'rails3-jquery-autocomplete', :git => 'git://github.com/vvdpzz/rails3-jquery-autocomplete'
 
+gem 'coderay'
+
+gem 'acts_as_commentable'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
