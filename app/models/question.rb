@@ -2,6 +2,9 @@ class Question < ActiveRecord::Base
   # NOTE: Questions belong to a user
   belongs_to :user
   
+  # NOTE: one question has many answers
+  has_many :answers,    :dependent => :destroy
+  
   # validations
   validate :tags_count_must_within_one_to_five
   

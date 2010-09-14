@@ -32,7 +32,8 @@ class User < ActiveRecord::Base
     end
   end
   
-  has_many :questions, :dependent => :destroy
+  has_many :questions,  :dependent => :destroy
+  has_many :answers,    :dependent => :destroy
   
   # vote plugin
   acts_as_voter
