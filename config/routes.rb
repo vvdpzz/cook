@@ -3,6 +3,11 @@
   # post comment
   post 'comments/create'
 
+  # Votes
+  get "votes/vote_up"
+
+  get "votes/vote_down"
+  
   # Questions
   resources :questions do
     resources :answers do
