@@ -1,0 +1,3 @@
+<%= link_to '', {:controller => :votes, :action => :vote_up, :voteable => vote.class.name, :id => vote.id}, :remote => true, :class => "vote-up" %>
+<div class="voted" id="vote_<%= vote.class %>_<%= vote.id %>"><%= to_k vote.voted %></div>
+<%= link_to '', {:controller => :votes, :action => :vote_down, :voteable => vote.class.name, :id => vote.id}, :remote => true, :class => "vote-down" %>

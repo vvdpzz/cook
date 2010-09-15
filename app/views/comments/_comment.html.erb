@@ -1,0 +1,12 @@
+<%=form_tag({:controller => 'comments', :action => 'create'}, :remote => true, :id => 'new_comment') do %>
+	<%= hidden_field_tag :commentable, commentable %>
+	<%= hidden_field_tag :id, id %>
+	<div>
+		<div class="comment_area_block">
+			<%= text_area_tag :body, {}, :class => 'comment_area' %>
+		</div>
+		<div class="comment_submit">
+			<%= submit_tag '添加回复', :class => 'comment_submit' %>
+		</div>
+	</div>
+<% end %>

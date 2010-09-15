@@ -1,0 +1,4 @@
+$('#comments_<%= @qora.class %>_<%= @qora.id %>').append("<%= escape_javascript(render :partial => 'comments/show_comment', :object => @comment) %>");
+$('#new_comment')[0].reset();
+$('#create_comment_<%= @qora.class %>_<%= @qora.id %>').slideUp();
+$('#add_comment_<%= @qora.class %>_<%= @qora.id %>').show();

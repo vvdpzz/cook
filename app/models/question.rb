@@ -15,6 +15,9 @@ class Question < ActiveRecord::Base
   # vote plugin
   acts_as_voteable
   
+  # comment plugin
+  acts_as_commentable
+  
   # scope
   scope :latest, order("created_at DESC")
   scope :active, order("updated_at DESC")
@@ -26,6 +29,13 @@ class Question < ActiveRecord::Base
     tagged.split(/,/)
   end
   
+  before_save :set_tagged_list
+
+  private
+    def set_tagged_list
+      self.tagged = self.tag_list.to_s
+    end
+    
   protected
   
     def tags_count_must_within_one_to_five

@@ -33,6 +33,10 @@ gem 'coderay'
 
 gem 'acts_as_commentable'
 
+
+# pagination
+gem "will_paginate", "~> 3.0.pre2"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

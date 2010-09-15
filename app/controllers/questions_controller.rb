@@ -10,6 +10,12 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = pagination @question.answers.vote
+    # update viewed
+    if session["viewed_#{@question.id}"] == nil
+      session["viewed_#{@question.id}"] = 1
+      @question.update_attributes(:viewed => @question.viewed+1)
+    end
   end
 
   def new

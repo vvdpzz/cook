@@ -1,0 +1,13 @@
+<div id="comments_<%= qora.class %>_<%= qora.id %>" class="comments">
+	<%= render :partial => "comments/show_comment", :collection => qora.comments %>
+</div>
+<div id="create_comment_<%= qora.class %>_<%= qora.id %>" class="create_comment" style="display:none">
+	<%= render :partial => "comments/comment", :locals => {:commentable => qora.class.name, :id => qora.id} %>
+</div>
+<div id="add_comment_<%= qora.class %>_<%= qora.id %>" class="add_comment">
+	<% if qora.class.name == "Question" %>
+		<%= link_to '添加回复', new_question_comment_path(qora), :remote => true %>
+	<% else %>
+		<%= link_to '添加回复', new_question_answer_comment_path(qora.question,qora), :remote => true %>
+	<% end %>
+</div>

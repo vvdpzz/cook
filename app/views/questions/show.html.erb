@@ -14,9 +14,9 @@
   <b>Body:</b>
   <%= @question.body %>
 </p>
+<%= link_to '编辑', edit_question_path(@question) if current_user and current_user.id == @question.user_id %>
+<%= render :partial => 'partials/comment', :object => @question, :as => :qora %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
 
 <%= render :partial => 'partials/answer', :collection => @answers %>
 <%= render :partial => @answer = @question.answers.build %>

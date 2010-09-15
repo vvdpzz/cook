@@ -1,6 +1,9 @@
-Cook::Application.routes.draw do
+  Cook::Application.routes.draw do
 
+  # post comment
+  post 'comments/create'
 
+  # Questions
   resources :questions do
     resources :answers do
       resources :comments
@@ -13,4 +16,4 @@ Cook::Application.routes.draw do
 
   root :to => "questions#index"
 
-end
+  end
