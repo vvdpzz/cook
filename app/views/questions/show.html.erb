@@ -1,24 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @question.user %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @question.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @question.body %>
-</p>
-<%= render :partial => 'partials/vote', :object => @question %>
-
-<%= link_to '编辑', edit_question_path(@question) if current_user and current_user.id == @question.user_id %>
-<%= render :partial => 'partials/comment', :object => @question, :as => :qora %>
-
-
-<%= render :partial => 'partials/answer', :collection => @answers %>
-<%= render :partial => @answer = @question.answers.build %>
+<div class="question-header">
+	<h1><%= link_to @question.title, @question %></h1>
+</div>
+<div id="main">
+	<div class="post-content">
+		<div class="left">
+			<%= render :partial => 'partials/vote', :object => @question %>
+		</div>
+		<div class="right">
+			<div class="post-text">
+				<%= safe_html(BlueCloth.new(coderay(@question.body)).to_html) %>
+			</div>
+			<div class="operation">
+				<%= link_to '编辑', edit_question_path(@question) if current_user and current_user.id == @question.user_id %>
+			</div>
+			<div class="user_stats">
+				<div class="action-time" style="margin-bottom:5px">
+					ask <span style="font-weight:bold"><%= time_ago_in_words @question.created_at %></span> ago
+				</div>
+			</div>
+			<%= render :partial => 'partials/comment', :object => @question, :as => :qora %>
+		</div>
+	</div>
+	<div id="answers">
+		<div id="answers-header">
+			<div class="subheader">
+				<h2><%= "#{@question.answers.size} 个答案" if @question.answers.present? %></h2>
+				<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+					<%= tab.answer_vote		'投票',		answer_vote_url %>
+					<%= tab.answer_latest	'最新',	answer_latest_url %>
+				<% end if @question.answers.present? %>
+			</div>
+		</div>
+		<%= render :partial => 'partials/answer', :collection => @answers %>
+		<%= render :partial => @answer = @question.answers.build %>
+	</div>
+</div>

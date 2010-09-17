@@ -4,6 +4,12 @@ GIT
   specs:
     rails3-jquery-autocomplete (0.2.0)
 
+GIT
+  remote: http://github.com/atomgas/tabs_on_rails.git
+  revision: ae13ee788fb241fdbb9132bb6a43965d61e1c5d3
+  specs:
+    tabs_on_rails ()
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -103,5 +109,6 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.0)
   rails3-jquery-autocomplete!
+  tabs_on_rails!
   thumbs_up
   will_paginate (~> 3.0.pre2)

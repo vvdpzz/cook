@@ -37,6 +37,9 @@ gem 'acts_as_commentable'
 # pagination
 gem "will_paginate", "~> 3.0.pre2"
 
+# tabs view
+gem 'tabs_on_rails', :git => 'http://github.com/atomgas/tabs_on_rails.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -5,9 +5,36 @@ class QuestionsController < ApplicationController
   autocomplete :tag, :name, :full => true
 
   def index
-    @questions = Question.all
+    @questions = pagination Question.all
   end
 
+  def latest
+    @questions = pagination Question.latest
+    render :index
+  end
+  
+  def active
+    @questions = pagination Question.active
+    render :index
+  end
+  
+  def vote
+    @questions = pagination Question.vote
+    render :index
+  end
+  
+  def answer_latest
+    @question = Question.find(params[:id])
+    @answers = pagination @question.answers.latest
+    render :show
+  end
+  
+  def answer_vote
+    @question = Question.find(params[:id])
+    @answers = pagination @question.answers.vote
+    render :show
+  end
+  
   def show
     @question = Question.find(params[:id])
     @answers = pagination @question.answers.vote
