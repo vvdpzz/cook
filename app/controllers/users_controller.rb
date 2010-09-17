@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
 
   def index
-    @users = pagination User.all
+    @users = pagination User.rp
   end
   
   def oldest
     @users = pagination User.oldest
+    render :index
+  end
+  
+  def rp
+    @users = pagination User.rp
     render :index
   end
   

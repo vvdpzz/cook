@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   autocomplete :tag, :name, :full => true
 
   def index
-    @questions = pagination Question.all
+    @questions = pagination Question.latest
   end
 
   def latest

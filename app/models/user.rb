@@ -34,8 +34,10 @@ class User < ActiveRecord::Base
   
   has_many :questions,  :dependent => :destroy
   has_many :answers,    :dependent => :destroy
+  has_one :profile,     :dependent => :destroy
   
   # some scopes
+  scope :rp,      order("reputation DESC")
   scope :oldest,  order("created_at ASC")
   
   # vote plugin
@@ -44,4 +46,14 @@ class User < ActiveRecord::Base
   
   # gravatar plugin
   is_gravtastic
+  
+  # create a profile after user sign up
+  after_create :create_profile
+  
+  private
+    def create_profile
+      self.profile ||= Profile.new(:first_name => "无名", :last_name => "氏")
+      self.save
+    end
+    
 end

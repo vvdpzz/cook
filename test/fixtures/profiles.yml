@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birth: 2010-09-18 01:01:12
+  faction: 1
+  location: 
+  me: MyText
+  reputation: 1
+
+two:
+  user: 
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birth: 2010-09-18 01:01:12
+  faction: 1
+  location: 
+  me: MyText
+  reputation: 1

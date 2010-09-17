@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100915122956) do
+ActiveRecord::Schema.define(:version => 20100917170112) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -39,6 +39,20 @@ ActiveRecord::Schema.define(:version => 20100915122956) do
     t.string   "e"
     t.integer  "t"
     t.string   "c"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.datetime "birth"
+    t.integer  "faction",    :default => 0
+    t.string   "website",    :default => "http://"
+    t.string   "location"
+    t.text     "me"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20100915122956) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
+    t.integer  "reputation"
     t.string   "identity_url"
     t.string   "remember_token"
     t.datetime "remember_created_at"

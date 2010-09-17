@@ -3,9 +3,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       # t.database_authenticatable :null => false
       t.string :email
+      t.integer  :reputation
       t.openid_authenticatable
       t.rememberable
       t.trackable
+      t.integer  :reputation,  :default => 1
 
       # t.recoverable
       # t.confirmable
