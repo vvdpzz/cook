@@ -26,7 +26,7 @@ class Question < ActiveRecord::Base
   
   # return tag list
   def tagged_list
-    tagged.split(/,/)
+    tagged.split(/,\s*/)
   end
   
   before_save :set_tagged_list
