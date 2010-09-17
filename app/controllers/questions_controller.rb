@@ -35,6 +35,19 @@ class QuestionsController < ApplicationController
     render :show
   end
   
+  def accept
+    question = Question.find(params[:id])
+    question.update_attributes( :accepted => params[:accept] )
+    
+    # hack
+    answer = Answer.find(params[:accept])
+    answer.update_attributes( :voted => answer.voted + 27367, :created_at => -2010.years.ago(answer.created_at) )
+    
+    save_event(s=current_user,e='accept',t=answer)
+    
+    redirect_to question
+  end
+  
   def show
     @question = Question.find(params[:id])
     @answers = pagination @question.answers.vote

@@ -4,6 +4,9 @@
   match 'tags/nameabc'      => 'tags#nameabc',      :via => 'get'
   match 'tags/popular'      => 'tags#popular',      :via => 'get'
   resources :tags
+  
+  #favorites
+  match 'questions/:id/favorites' => 'favorites#create', :as => :favorites, :via => 'get'
 
   # post comment
   post 'comments/create'
@@ -16,6 +19,9 @@
   # Answers
   match 'questions/:id/latest'  => 'questions#answer_latest',  :via => 'get', :as => :answer_latest
   match 'questions/:id/vote'    => 'questions#answer_vote',    :via => 'get', :as => :answer_vote
+  
+  # Accepte answer
+  match 'questions/:id/accept/:accept' => 'questions#accept', :as => :accept
   
   # Questions
   match 'questions/latest'  => 'questions#latest',  :via => 'get'

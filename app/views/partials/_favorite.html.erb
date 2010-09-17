@@ -1,0 +1,6 @@
+<% if current_user and current_user.favorites.find_by_question_id(question.id) %>
+<%= link_to '', favorites_path(:id => question), :remote => true, :class => "star-on", :id => "favorite" %>
+<% else %>
+<%= link_to '', favorites_path(:id => question), :remote => true, :class => "star", :id => "favorite" %>
+<% end %>
+<div class="favorited" id="favorited"><%= question.favorited %></div>

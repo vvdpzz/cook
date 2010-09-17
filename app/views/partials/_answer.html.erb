@@ -4,6 +4,7 @@
 		<% answer.voted -= 27367 if answer.voted >= 10000
 		   answer.created_at =  2010.years.ago(answer.created_at) if answer.created_at.year > 3000 %>
 		<%= render :partial => 'partials/vote', :object => answer %>
+		<%= render :partial => 'partials/accept', :object => answer, :as => :answer %>
 	</div>
 	<div class="right">
 		<div class="post-text">

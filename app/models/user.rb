@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   has_many :questions,  :dependent => :destroy
   has_many :answers,    :dependent => :destroy
   has_one :profile,     :dependent => :destroy
+  has_many :favorites,  :dependent => :destroy
   
   # some scopes
   scope :rp,      order("reputation DESC")

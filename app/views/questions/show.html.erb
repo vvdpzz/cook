@@ -5,6 +5,7 @@
 	<div class="post-content">
 		<div class="left">
 			<%= render :partial => 'partials/vote', :object => @question %>
+			<%= render :partial => 'partials/favorite', :object => @question, :as => :question %>
 		</div>
 		<div class="right">
 			<div class="post-text">

@@ -9,6 +9,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :accepted,    :default => 0
       t.integer :voted,       :default => 0      
       t.integer :viewed,      :default => 0
+      t.integer :favorited,   :default => 0
       # answers size
       t.integer :answered,    :default => 0
       # tags
