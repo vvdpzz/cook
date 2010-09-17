@@ -14,6 +14,10 @@ gem 'devise'
 # WEBSITE http://github.com/nbudin/devise_openid_authenticatable
 gem 'devise_openid_authenticatable'
 
+# gravatar
+# http://github.com/chrislloyd/gravtastic
+gem 'gravtastic'
+
 # WEBSITE http://github.com/mbleigh/acts-as-taggable-on
 # INSTALL rails g acts_as_taggable_on:migration
 gem 'acts-as-taggable-on'

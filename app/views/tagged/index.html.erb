@@ -1,0 +1,12 @@
+<div id="main">
+<div class="subheader">
+	<h1><%= params[:tag] %></h1>
+	<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+		<%= tab.latest	'最新问题',	tagged_latest_url(params[:tag]) %>
+		<%= tab.active	'最近更新',	tagged_active_url(params[:tag]) %>
+		<%= tab.vote	'最多投票',		tagged_vote_url(params[:tag]) %>
+	<% end %>
+</div>
+<%= render :partial => 'partials/question', :collection => @questions %>
+<%= will_paginate @questions %>
+</div>

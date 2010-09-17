@@ -1,13 +1,12 @@
 <%= div_for question do %>
 <div class="stats">
 	<%= vote_stats(question.voted) %>
-	<%= answer_stats(question.answered, question.accepted) %>
 	<%= view_stats(question.viewed) %>
 </div>
 <div class="summary">
 	<h3><%= link_to question.title, question %></h3>
 	<div class="excerpt">
-		<%= safe_html truncate(question.body, :length => 50) %>
+		<%= safe_html truncate(question.body, :length => 60) %>
 	</div>
 	<div class="tags">
 		<% question.tagged_list.each do |tag| %>

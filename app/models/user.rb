@@ -35,8 +35,13 @@ class User < ActiveRecord::Base
   has_many :questions,  :dependent => :destroy
   has_many :answers,    :dependent => :destroy
   
+  # some scopes
+  scope :oldest,  order("created_at ASC")
+  
   # vote plugin
   acts_as_voter
   has_karma(:questions, :as => :user)
   
+  # gravatar plugin
+  is_gravtastic
 end

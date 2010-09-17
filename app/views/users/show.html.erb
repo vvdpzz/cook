@@ -1,0 +1,49 @@
+<div class="parentheader">
+</div>
+<table class="vcard_table">
+	<tbody><tr>
+		<td style="vertical-align:top; width:170px">
+			<table>
+				<tbody><tr>
+					<td id="user-avatar">
+						<%= image_tag @user.gravatar_url(:size => 128) %>
+					</td>
+				</tr>
+				<tr>
+					<td class="summaryinfo">
+					</td>
+					<td class="summaryinfo">
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+		<td style="vertical-align: top; width:350px">
+			<table class="user-details">
+				<tr>
+					<td>创建时间</td>
+					<td><span class="cool"><%= time_ago_in_words @user.created_at %></span></td>
+				</tr>
+				<tr>
+					<td>最近登录</td>
+					<td><span class="cool"><span class="relativetime"><%= time_ago_in_words @user.current_sign_in_at %></span></span></td>
+				</tr>
+
+			</tbody></table>
+		</td>
+
+		<td style="width:460px">
+			<div id="user-about-me"></div>
+		</td>
+	</tr>
+</tbody>
+</table>
+<div class="parentheader">
+</div>
+<div class="personal_questions">
+	<%= render :partial => 'partials/personal_question', :collection => @questions, :as => :question %>
+	<%= will_paginate @questions %>
+</div>
+<div class="personal_answers">
+	<%= render :partial => 'partials/personal_answer', :collection => @answers, :as => :answer %>
+	<%= will_paginate @answers %>
+</div>
