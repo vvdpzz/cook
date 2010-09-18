@@ -36,6 +36,37 @@ module ApplicationHelper
         @context.link_to(name, options,item_options)
       end
     end
+    
+    def open_tabs(options = {})
+      @context.tag("ul", options, open = true)
+    end
+
+    def close_tabs(options = {})
+      "</ul>".html_safe
+    end
+  end
+
+  def vote_stats(number)
+    content_tag(:div, :class => 'votes') do
+       [content_tag(:div, to_k(number), :class => 'mini-counts'), content_tag(:div, '投票', :class => 'stats_word')].join
+    end
+  end
+  def answer_stats(number, selected)
+    if selected != 0
+      answer_status = "saccepted"
+    elsif number > 0
+      answer_status = "sanswered"
+    else
+      answer_status = "sunanswered"
+    end
+    content_tag(:div, :class => "status #{answer_status}") do
+       [content_tag(:div, to_k(number), :class => 'mini-counts'), content_tag(:div, '答案', :class => 'stats_word')].join
+    end
+  end
+  def view_stats(number)
+    content_tag(:div, :class => 'views') do
+       [content_tag(:div, to_k(number), :class => 'mini-counts'), content_tag(:div, '浏览', :class => 'stats_word')].join
+    end
   end
   
 end
