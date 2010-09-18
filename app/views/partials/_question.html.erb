@@ -1,0 +1,20 @@
+<%= div_for question do %>
+<div class="stats">
+	<%= vote_stats(question.voted) %>
+	<%= answer_stats(question.answered, question.accepted) %>
+	<%= view_stats(question.viewed) %>
+</div>
+<div class="summary">
+	<h3><%= link_to question.title, question %></h3>
+	<div class="excerpt">
+		<%= safe_html truncate(question.body, :length => 50) %>
+	</div>
+	<div class="tags">
+	</div>
+	<div class="object_info">
+		<div class="action-time">
+			ask <span style="font-weight:bold"><%= time_ago_in_words question.created_at %></span> ago
+		</div>
+	</div>
+</div>
+<% end %>

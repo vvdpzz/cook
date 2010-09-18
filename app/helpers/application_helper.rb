@@ -18,4 +18,24 @@ module ApplicationHelper
       return number
     end
   end
+  
+  #tabs based on tabs_on_rails
+  class NavTabBuilder < TabsOnRails::Tabs::Builder
+    def tab_for(tab, name, options, item_options = {})
+      item_options[:class] = (current_tab?(tab) ? 'active' : 'inactive')
+      @context.content_tag(:li) do
+        @context.link_to(name, options,item_options)
+      end
+    end
+  end
+  
+  class MenuTabBuilder < TabsOnRails::Tabs::Builder
+    def tab_for(tab, name, options, item_options = {})
+      item_options[:class] = (current_tab?(tab) ? 'clicked' : 'unclick')
+      @context.content_tag(:li) do
+        @context.link_to(name, options,item_options)
+      end
+    end
+  end
+  
 end
