@@ -1,4 +1,5 @@
 class TaggedController < ApplicationController
+
   def index
     @questions = pagination Question.tagged_with(params[:tag]).latest
   end
@@ -17,4 +18,5 @@ class TaggedController < ApplicationController
     @questions = pagination Question.tagged_with(params[:tag]).vote
     render :index
   end
+
 end

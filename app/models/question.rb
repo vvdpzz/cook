@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   
   # NOTE: one question has many answers
   has_many :answers,    :dependent => :destroy
+  has_many :favorites,  :dependent => :destroy
   
   # validations
   validate :tags_count_must_within_one_to_five

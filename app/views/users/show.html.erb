@@ -1,0 +1,77 @@
+<div class="parentheader">
+</div>
+<table class="vcard_table">
+	<tbody><tr>
+		<td style="vertical-align:top; width:170px">
+			<table>
+				<tbody><tr>
+					<td id="user-avatar">
+						<%= image_tag @user.gravatar_url(:size => 128) %>
+					</td>
+				</tr>
+				<tr>
+					<td class="summaryinfo">
+						<div class="summarycount"><%= @user.reputation %><span style="margin-top:5px; font-weight:bold;color:#555;font-size:14px;">RP</span></div>
+					</td>
+					<td class="summaryinfo">
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+		<td style="vertical-align: top; width:350px">
+			<table class="user-details">
+				<tbody><tr>
+					<td style="width:120px">姓名</td>
+					<td style="width:230px"><%= @user.profile.full_name %></td>
+				</tr>
+				<tr>
+					<td>阵营</td>
+					<td><%= @user.profile.faction %></td>
+				</tr>
+				<tr>
+					<td>创建时间</td>
+					<td><span class="cool"><%= time_ago_in_words @user.created_at %></span></td>
+				</tr>
+				<tr>
+					<td>最近登录</td>
+					<td><span class="cool"><span class="relativetime"><%= time_ago_in_words @user.current_sign_in_at %></span></span></td>
+				</tr>
+				
+				<tr>
+					<td>网站</td>
+					<td>
+						<div class="no-overflow"><%= link_to @user.profile.website, @user.profile.website %></div>                                
+					</td>
+				</tr>
+
+				<tr>
+					<td>位置</td>
+					<td>
+						<%= @user.profile.location %>
+					</td>
+				</tr>
+				<tr>
+					<td>年龄</td>
+					<td>
+						<%= Time.now.year - @user.profile.birth.year if @user.profile.birth%>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+
+		<td style="width:460px">
+			<div id="user-about-me"></div>
+		</td>
+	</tr>
+</tbody>
+</table>
+<div class="parentheader">
+</div>
+<div class="personal_questions">
+	<%= render :partial => 'partials/personal_question', :collection => @questions, :as => :question %>
+	<%= will_paginate @questions %>
+</div>
+<div class="personal_answers">
+	<%= render :partial => 'partials/personal_answer', :collection => @answers, :as => :answer %>
+	<%= will_paginate @answers %>
+</div>

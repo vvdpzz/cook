@@ -1,0 +1,9 @@
+<% if answer.question.accepted ==0 %>
+	<% if current_user and answer.user_id == current_user.id %>
+		<div class="accept" id="accept_<%= answer.id %>">
+			<%= link_to '', accept_url(:id => answer.question.id, :accept => answer.id), :class => "accept" %>
+		</div>
+	<% end %>
+<% elsif answer.question.accepted == answer.id %>
+	<div class="accepted"></div>
+<% end -%>

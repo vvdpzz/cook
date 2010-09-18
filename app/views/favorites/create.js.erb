@@ -1,0 +1,7 @@
+<% if @favorite %>
+	$('#favorite').addClass("star-on");
+<% else %>
+	$('#favorite').removeClass("star-on");
+	$('#favorite').addClass("star");
+<% end %>
+$('#favorited').html("<%= @favorited %>");

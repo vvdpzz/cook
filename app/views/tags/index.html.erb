@@ -1,0 +1,9 @@
+<div class="parentheader">
+	<h1>全部标签</h1>
+	<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+		<%= tab.popular '热度',	tags_popular_url %>
+		<%= tab.nameabc	'名称',	tags_nameabc_url %>
+	<% end %>
+</div>
+<%= render :partial => 'partials/tag', :collection => @tags %>
+<%= will_paginate @tags %>

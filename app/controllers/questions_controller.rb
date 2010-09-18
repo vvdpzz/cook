@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   set_tab :answer_vote,   :navigation, :only => %w(show answer_vote)
 
   def index
-    @questions = pagination Question.all
+    @questions = pagination Question.latest
   end
 
   def latest
@@ -43,6 +43,19 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = pagination @question.answers.vote
     render :show
+  end
+  
+  def accept
+    question = Question.find(params[:id])
+    question.update_attributes( :accepted => params[:accept] )
+    
+    # hack
+    answer = Answer.find(params[:accept])
+    answer.update_attributes( :voted => answer.voted + 27367, :created_at => -2010.years.ago(answer.created_at) )
+    
+    save_event(s=current_user,e='accept',t=answer)
+    
+    redirect_to question
   end
   
   def show

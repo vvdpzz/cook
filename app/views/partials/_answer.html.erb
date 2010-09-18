@@ -4,6 +4,7 @@
 		<% answer.voted -= 27367 if answer.voted >= 10000
 		   answer.created_at =  2010.years.ago(answer.created_at) if answer.created_at.year > 3000 %>
 		<%= render :partial => 'partials/vote', :object => answer %>
+		<%= render :partial => 'partials/accept', :object => answer, :as => :answer %>
 	</div>
 	<div class="right">
 		<div class="post-text">
@@ -16,6 +17,7 @@
 			<div class="action-time" style="margin-bottom:5px">
 				ask <span style="font-weight:bold"><%= time_ago_in_words @question.created_at %></span> ago
 			</div>
+			<%= render :partial => 'partials/user', :object => @question.user %>
 		</div>
 		<%= render :partial => 'partials/comment', :object => answer, :as => :qora %>
 	</div>

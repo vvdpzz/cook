@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100915122956) do
+ActiveRecord::Schema.define(:version => 20100917180206) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -43,6 +43,27 @@ ActiveRecord::Schema.define(:version => 20100915122956) do
     t.datetime "updated_at"
   end
 
+  create_table "favorites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.datetime "birth"
+    t.integer  "faction",    :default => 0
+    t.string   "website",    :default => "http://"
+    t.string   "location"
+    t.text     "me"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -51,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20100915122956) do
     t.integer  "accepted",   :default => 0
     t.integer  "voted",      :default => 0
     t.integer  "viewed",     :default => 0
+    t.integer  "favorited",  :default => 0
     t.integer  "answered",   :default => 0
     t.string   "tagged"
     t.datetime "created_at"
@@ -78,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20100915122956) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
+    t.integer  "reputation",          :default => 1
     t.string   "identity_url"
     t.string   "remember_token"
     t.datetime "remember_created_at"
