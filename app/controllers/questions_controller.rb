@@ -3,6 +3,16 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
   
   autocomplete :tag, :name, :full => true
+  
+  set_tab :questions
+  set_tab :ask, :only => %w(new)
+  set_tab :latest,  :navigation, :only => %w(index latest)
+  set_tab :active,  :navigation, :only => %w(active)
+  set_tab :vote,    :navigation, :only => %w(vote)
+  
+  set_tab :answer_latest, :navigation, :only => %w(answer_latest)
+  set_tab :answer_oldest, :navigation, :only => %w(answer_oldest)
+  set_tab :answer_vote,   :navigation, :only => %w(show answer_vote)
 
   def index
     @questions = pagination Question.latest

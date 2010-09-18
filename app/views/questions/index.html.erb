@@ -4,7 +4,7 @@
 	<%= tab.active	'最近更新',	questions_active_url %>
 	<%= tab.vote	'最多投票',		questions_vote_url %>
 <% end %>
-<div class="questions">
-	<%= render :partial => 'partials/question', :collection => @questions %>
+<div id="list">
+	<%= render @questions %>
 </div>
 <%= will_paginate @questions %>

@@ -1,5 +1,4 @@
   Cook::Application.routes.draw do
-
   # Tags
   match 'tags/nameabc'      => 'tags#nameabc',      :via => 'get'
   match 'tags/popular'      => 'tags#popular',      :via => 'get'
@@ -47,6 +46,12 @@
     resources :comments
     get :autocomplete_tag_name, :on => :collection
   end
+  
+  # tagged
+  match 'tagged/:tag'       => 'tagged#index',      :via => 'get',  :as => :tagged
+  match 'tagged/:tag/latest'=> 'tagged#latest',     :via => 'get',  :as => :tagged_latest
+  match 'tagged/:tag/active'=> 'tagged#active',     :via => 'get',  :as => :tagged_active 
+  match 'tagged/:tag/vote'  => 'tagged#vote',       :via => 'get',  :as => :tagged_vote
 
   # Users
   match 'users/rp'          => 'users#rp',          :via => 'get'
