@@ -1,0 +1,14 @@
+<div id="main">
+	<div class="subheader">
+		<h1>待解决问题</h1>
+		<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+		<%= tab.latest	'最新问题',	unanswered_latest_url %>
+		<%= tab.active	'最近更新',	unanswered_active_url %>
+		<%= tab.vote	'最多投票',		unanswered_vote_url %>
+		<% end %>
+	</div>
+	<div class="questions">
+		<%= render :partial => 'partials/question', :collection => @questions %>
+	</div>
+	<%= will_paginate @questions %>
+</div>

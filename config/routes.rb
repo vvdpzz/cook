@@ -27,6 +27,12 @@
   match 'questions/active'  => 'questions#active',  :via => 'get'
   match 'questions/vote'    => 'questions#vote',    :via => 'get'
   
+  # Unanswered
+  match 'unanswered'        => 'unanswered#index',  :via => 'get'
+  match 'unanswered/latest' => 'unanswered#latest', :via => 'get'
+  match 'unanswered/active' => 'unanswered#active', :via => 'get'
+  match 'unanswered/vote'   => 'unanswered#vote',   :via => 'get'
+  
   # tagged
   match 'tagged/:tag'       => 'tagged#index',      :via => 'get',  :as => :tagged
   match 'tagged/:tag/latest'=> 'tagged#latest',     :via => 'get',  :as => :tagged_latest
