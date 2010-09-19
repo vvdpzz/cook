@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(:version => 20100917180206) do
     t.integer  "accepted",   :default => 0
     t.integer  "voted",      :default => 0
     t.integer  "viewed",     :default => 0
-    t.integer  "favorited",  :default => 0
     t.integer  "answered",   :default => 0
     t.string   "tagged"
     t.datetime "created_at"
@@ -100,7 +99,6 @@ ActiveRecord::Schema.define(:version => 20100917180206) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.integer  "reputation",          :default => 1
     t.string   "identity_url"
     t.string   "remember_token"
     t.datetime "remember_created_at"

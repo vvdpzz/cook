@@ -1,9 +1,11 @@
-<h1>全部问题</h1>
-<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
-	<%= tab.latest	'最新问题',	questions_latest_url %>
-	<%= tab.active	'最近更新',	questions_active_url %>
-	<%= tab.vote	'最多投票',		questions_vote_url %>
-<% end %>
+<div class="subheader">
+	<h1>全部问题</h1>
+	<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+		<%= tab.latest	'最新问题',	questions_latest_url %>
+		<%= tab.active	'最近更新',	questions_active_url %>
+		<%= tab.vote	'最多投票',	questions_vote_url %>
+	<% end %>
+</div>
 <div id="list">
 	<%= render @questions %>
 </div>

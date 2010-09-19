@@ -78,6 +78,8 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(params[:question])
+    puts params[:question][:body]
+    puts "==========================================================================================="
 
     if @question.save
       redirect_to(@question, :notice => 'Question was successfully created.')
