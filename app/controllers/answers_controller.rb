@@ -13,6 +13,7 @@ class AnswersController < ApplicationController
   def create
     @answer = current_user.answers.build(params[:answer])
     @answer.question_id = @question.id
+    @answer.html_body = BlueCloth.new(coderay(@answer.body)).to_html
     if @answer.save
       save_event(s=current_user,e='create_answer',t=@answer)
       redirect_to @question
@@ -23,6 +24,7 @@ class AnswersController < ApplicationController
 
   def update
     @answer = current_user.answers.find(params[:id])
+    @answer.html_body = BlueCloth.new(coderay(params[:answer][:body])).to_html
     if @answer.update_attributes(params[:answer])
       save_event(s=current_user,e='update_answer',t=@answer)
       redirect_to @question

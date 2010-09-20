@@ -8,7 +8,7 @@
 	</div>
 	<div class="right">
 		<div class="post-text">
-			<%= safe_html(BlueCloth.new(coderay(answer.body)).to_html) %>
+			<%= safe_html answer.html_body%>
 		</div>
 		<div class="operation">
 			<%= link_to '编辑', [:edit,answer.question,answer] if current_user and current_user.id == answer.user_id %>

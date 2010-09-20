@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100917180206) do
+ActiveRecord::Schema.define(:version => 20100917170112) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
     t.integer  "question_id"
     t.text     "body"
+    t.text     "html_body"
     t.integer  "voted",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -39,13 +40,6 @@ ActiveRecord::Schema.define(:version => 20100917180206) do
     t.string   "e"
     t.integer  "t"
     t.string   "c"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "favorites", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20100917180206) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
+    t.integer  "reputation",          :default => 1
     t.string   "identity_url"
     t.string   "remember_token"
     t.datetime "remember_created_at"

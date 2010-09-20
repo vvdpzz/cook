@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.references :user
       t.references :question
       t.text :body
+      t.text :html_body
       t.integer :voted,       :default => 0
 
       t.timestamps
