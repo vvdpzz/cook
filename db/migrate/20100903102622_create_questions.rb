@@ -4,10 +4,11 @@ class CreateQuestions < ActiveRecord::Migration
       t.references :user
       t.string :title
       t.text :body
+      t.text :html_body
       t.integer :status,      :default => 0
       # accepted answer ID
       t.integer :accepted,    :default => 0
-      t.integer :voted,       :default => 0      
+      t.integer :voted,       :default => 0   
       t.integer :viewed,      :default => 0
       t.integer :favorited,   :default => 0
       # answers size

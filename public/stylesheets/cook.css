@@ -9,7 +9,7 @@
 }
 .question {
 	float:left;
-	width:780px;
+	width:730px;
 	padding:11px 0 10px;
 	border-bottom:1px solid #D0DEF2;
 }
@@ -76,3 +76,76 @@
 	.question-header > h1 {
 		font-size: 24px; line-height: 28px; margin:0 0 7px; font-weight:normal;
 	}
+.content {
+	float:left; width:730px;
+}
+	.post {
+		float:left; width:100%;
+	}
+	.left {
+		float:left; width:40px;
+	}
+	.right {
+		margin-left:50px;
+	}
+	.post-text {
+		float: left; width: 100%; line-height:1.4;
+	}
+
+/* vote */
+.voted {
+	float:left; width:100%; color:#999; font-size:28px; text-align:center;
+}
+.vote-up, .vote-up:hover, .vote-down, .vote-down:hover {
+	float:left; width:40px; height:30px;
+}
+.vote-up{
+	background:url(/images/up.png) no-repeat;
+}
+.vote-up:hover{
+	background:url(/images/up-on.png) no-repeat;
+	text-decoration:none;
+}
+
+.vote-down{
+	background:url(/images/down.png) no-repeat;
+}
+.vote-down:hover{
+	background:url(/images/down-on.png) no-repeat;
+	text-decoration:none;
+}
+
+/* answers */
+#answers {
+	clear: both; padding-top: 10px; width: 730px;
+}
+#answers-header {
+	margin: 10px 0; width: 730px;
+}
+.subheader {
+	clear: both; border-bottom: 1px solid #D0DEF2; height: 34px; margin-bottom: 5px;
+}
+.answer {
+	float:left; width: 730px; border-bottom: 1px solid #D0DEF2; padding-bottom: 20px; padding-top: 20px;
+}
+.subheader > h2 {
+	float: left; font-size: 18px; font-weight: normal; line-height: 34px; margin:0px; font-weight:normal;
+}
+.space {
+	color: #222;
+	font-size: 20px;
+	font-weight: normal;
+	padding-top: 20px;
+}
+.create_answer {
+	width: 730px;
+	clear:both;
+}
+.answer_area {
+	width: 100%;
+	height: 120px;
+	font-size:14px;
+	padding:3px 2px;
+	line-height:1.4;
+	color:#444;
+}

@@ -78,8 +78,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(params[:question])
-    puts params[:question][:body]
-    puts "==========================================================================================="
+    @question.html_body = BlueCloth.new(coderay(@question.body)).to_html
 
     if @question.save
       redirect_to(@question, :notice => 'Question was successfully created.')
@@ -90,6 +89,8 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+    @question.html_body = BlueCloth.new(coderay(params[:question][:body])).to_html
+    @question.save
 
     if @question.update_attributes(params[:question])
       redirect_to(@question, :notice => 'Question was successfully updated.')

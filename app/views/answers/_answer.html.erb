@@ -1,7 +1,10 @@
-<%= form_for([@question,@answer]) do |f| %>
+<div class='create_answer'>
+	<h2 class='space'>你的答案</h2>
+	<%= form_for([@question,@answer]) do |f| %>
 	<div id='wmd-button-bar'></div>
-    <%= f.text_area :body, :class => 'editor_element editor_body editor_fontstyle', :id => 'wmd-input' %>
+    <%= f.text_area :body, :class => 'editor_element editor_body editor_fontstyle resizable', :id => 'wmd-input' %>
 	<div id='wmd-preview' class='editor_fontstyle'></div>
-    <%= f.submit %>
-<% end %>
-<%= javascript_include_tag 'wmd', 'showdown', 'jquery.tar', 'autocomplete-rails' %>
+	<%= f.submit %>
+	<% end %>
+</div>
+<%= javascript_include_tag 'jquery.tar', 'wmd', 'showdown', 'autocomplete-rails' %>

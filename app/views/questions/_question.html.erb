@@ -1,19 +1,19 @@
 <%= div_for question do %>
 <div class="stats">
 	<div class="voted">
-		<%= question.voted %> 投票
+		<%= to_k question.voted %> 投票
 	</div>
 	<div class="answered">
-		<%= question.answered %> 答案
+		<%= to_k question.answered %> 答案
 	</div>
 	<div class="viewed">
-		<%= question.viewed %> 浏览
+		<%= to_k question.viewed %> 浏览
 	</div>
 </div>
 <div class="summary">
 	<h3><%= link_to question.title, question %></h3>
 	<div class="excerpt">
-		<%= question.body.gsub(/<\/?[^>]*>/,  "") %>
+		<%= question.html_body.gsub(/<\/?[^>]*>/,  "") %>
 	</div>
 	<div class="msg">
 		ask <span style="font-weight:bold"><%= time_ago_in_words question.created_at %></span> ago

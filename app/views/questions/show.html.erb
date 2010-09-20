@@ -7,10 +7,22 @@
 			<%= render :partial => 'partials/vote', :object => @question %>
 		</div>
 		<div class="right">
-			<%= safe_html(BlueCloth.new(coderay(@question.body)).to_html) %>
+			<div class="post-text">
+				<%= safe_html @question.html_body %>
+			</div>
 		</div>
 	</div>
 	<div class="answers">
-		
+		<div id="answers-header">
+			<div class="subheader">
+				<h2><%= "#{@question.answers.size} 个答案" if @question.answers.present? %></h2>
+				<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
+					<%= tab.answer_vote		'投票',		answer_vote_url %>
+					<%= tab.answer_latest	'最新',	answer_latest_url %>
+				<% end if @question.answers.present? %>
+			</div>
+		</div>
+		<%= render :partial => 'partials/answer', :collection => @answers %>
+		<%= render :partial => @answer = @question.answers.build %>
 	</div>
 </div>

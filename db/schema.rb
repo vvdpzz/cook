@@ -68,10 +68,12 @@ ActiveRecord::Schema.define(:version => 20100917180206) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
+    t.text     "html_body"
     t.integer  "status",     :default => 0
     t.integer  "accepted",   :default => 0
     t.integer  "voted",      :default => 0
     t.integer  "viewed",     :default => 0
+    t.integer  "favorited",  :default => 0
     t.integer  "answered",   :default => 0
     t.string   "tagged"
     t.datetime "created_at"
