@@ -7,6 +7,6 @@
 	<% end %>
 </div>
 <div id="list">
-	<%= render @questions %>
+	<%= render :partial => 'partials/question', :collection => @questions %>
 </div>
 <%= will_paginate @questions %>

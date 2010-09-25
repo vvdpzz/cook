@@ -35,7 +35,6 @@ class User < ActiveRecord::Base
   has_many :questions,  :dependent => :destroy
   has_many :answers,    :dependent => :destroy
   has_one :profile,     :dependent => :destroy
-  has_many :favorites,  :dependent => :destroy
   
   # some scopes
   scope :rp,      order("reputation DESC")
@@ -46,7 +45,7 @@ class User < ActiveRecord::Base
   has_karma(:questions, :as => :user)
   
   # gravatar plugin
-  is_gravtastic
+  is_gravtastic!
   
   # create a profile after user sign up
   after_create :create_profile

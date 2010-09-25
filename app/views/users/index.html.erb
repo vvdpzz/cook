@@ -5,5 +5,5 @@
 		<%= tab.oldest 	'时间',	users_oldest_url%>
 	<% end %>
 </div>
-<%= render :partial => 'partials/user_card', :collection => @users, :as => :user %>
+<%= render :partial => 'partials/user_package', :collection => @users, :as => :user %>
 <%= will_paginate @users %>

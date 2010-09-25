@@ -14,7 +14,7 @@
 			<%= link_to '编辑', [:edit,answer.question,answer] if current_user and current_user.id == answer.user_id %>
 		</div>
 		<div class="user_stats">
-			<div class="action-time" style="margin-bottom:5px">
+			<div class="timestamp">
 				ask <span style="font-weight:bold"><%= time_ago_in_words @question.created_at %></span> ago
 			</div>
 			<%= render :partial => 'partials/user', :object => @question.user %>

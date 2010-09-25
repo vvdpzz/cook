@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  
+  set_tab :users
+  
+  set_tab :rp,      :navigation, :only => %w(index rp)
+  set_tab :oldest,  :navigation, :only => %w(oldest)  
+  
 
   def index
     @users = pagination User.rp

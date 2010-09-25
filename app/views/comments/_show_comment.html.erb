@@ -1,6 +1,6 @@
 <div id="comment_<%= show_comment.id %>" class="comment">
 	<div class="comment-text">
-		<%= show_comment.body %>
+		<%= show_comment.body %> - <%= link_to show_comment.user.profile.full_name, show_comment.user %>
 		<span style="color:gray"><%= time_ago_in_words show_comment.created_at %></span>
 	</div>
 </div>

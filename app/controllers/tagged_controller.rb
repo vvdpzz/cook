@@ -1,4 +1,9 @@
 class TaggedController < ApplicationController
+  
+  set_tab :questions
+  set_tab :latest,  :navigation, :only => %w(index latest)
+  set_tab :active,  :navigation, :only => %w(active)
+  set_tab :vote,    :navigation, :only => %w(vote)
 
   def index
     @questions = pagination Question.tagged_with(params[:tag]).latest

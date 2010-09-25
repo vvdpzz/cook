@@ -1,4 +1,9 @@
 class UnansweredController < ApplicationController
+  
+  set_tab :unanswered
+  set_tab :latest,  :navigation, :only => %w(index latest)
+  set_tab :active,  :navigation, :only => %w(active)
+  set_tab :vote,    :navigation, :only => %w(vote)
 
   def index
     @questions = pagination Question.unanswered.latest

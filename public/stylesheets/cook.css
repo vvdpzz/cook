@@ -4,6 +4,17 @@
 #wrapper {
 	float:left;
 }
+#return0 {
+	float:left;
+}
+#menu {
+	float:right; border:1px solid #d0def2; border-top:0; padding:4px 12px;
+	border-radius:0 0 5px 5px;
+	line-height:22px;
+}
+#menu > .micro_gravatar {
+	float:left; width:20px; height:20px; margin-right:5px;
+}
 .list {
 	float:left;
 }
@@ -18,6 +29,15 @@
 	width:80px;
 	text-align:right;
 }
+	.stats > .voted {
+		
+	}
+	.stats > .answered {
+		
+	}
+	.stats > .viewed {
+		
+	}
 .stats > div {
 	margin:0 0 7px;
 }
@@ -48,6 +68,26 @@
 }
 	.subheader > h1{
 		float: left; line-height:34px; margin:0; font-weight:normal;
+	}
+
+/* navigation */
+.navigation {
+	float:left; margin-top:60px;
+}
+	.navigation li {
+		display:inline; margin:0 5px;
+	}
+	.navigation a {
+		border:1px solid #d0def2; padding:5px 10px; font-size:16px; color:#444;
+	}
+		.navigation a:hover {
+			background:#d0def2; color:white;
+		}
+	.navigation a.active {
+		background:#d0def2; color:white;
+	}
+	.navigation a.inactive {
+		border:1px solid #d0def2; background:white; color:#444;
 	}
 /* tabs */
 .tabs{
@@ -93,7 +133,7 @@
 	}
 
 /* vote */
-.voted {
+.voted_number {
 	float:left; width:100%; color:#999; font-size:28px; text-align:center;
 }
 .vote-up, .vote-up:hover, .vote-down, .vote-down:hover {
@@ -148,4 +188,90 @@
 	padding:3px 2px;
 	line-height:1.4;
 	color:#444;
+}
+
+/* permission */
+.permission {
+	float:left;
+}
+
+/* user */
+.user_stats {
+	float:right;
+}
+.timestamp {
+	margin-bottom:5px
+}
+.user_card {
+	float:left;
+}
+	.user_card > .small_gravatar {
+		float:left; width:32px; height:32px;
+	}
+	.user_card > .user_text {
+		margin-left:37px;
+	}
+	.user_card > .user_name {
+		
+	}
+	.user_card > .user_reputation {
+		
+	}
+
+/* comments */
+.comments {
+	float:left; margin-top:10px; border-top: 1px dotted #AAA; font-size: 13px; line-height: 135%; padding-bottom: 10px; width: 100%;
+}
+.create_comment {
+	float:left; width:100%;
+}
+.add_comment {
+	float:left;
+}
+.comment {
+	padding:5px 0; border-bottom:dotted 1px #ddd; line-height:17px; color:#555;
+}
+.comment_area {
+	float:left; width:678px; height:40px; padding:0; margin:0; font-size:13px; color:#444;
+}
+.comment_submit {
+	float:left; padding:0; margin:5px 0;
+}
+
+/* pagination */
+.pagination{
+	float:left; padding:1em 0; width:100%; font-size:12px;
+}
+	.pagination > em{
+		font-weight: bold; font-style:normal; background-color:#555; border: 1px solid #444; color:white; margin:2px; padding:2px 5px;
+	}
+	.pagination a, .pagination span {
+		border:1px solid #ccc; padding:2px 5px; background-color:#f7f7f7; margin:2px;
+	}
+	.pagination span.current {
+		font-weight: bold; font-style:normal; background-color:#555; border: 1px solid #444; color:white; margin:2px; padding:2px 5px;
+	}
+	.pagination a:hover, .pagination a:focus {
+		text-decoration:none; border:1px solid #aaa;
+	}
+	.pagination span.disabled {
+		border: 1px solid #eee; color:#aaa; margin:2px; padding:2px 5px;
+	}
+
+/* for Tag and User Page */
+.parentheader {
+	clear: both; border-bottom:1px solid #d0def2; height:34px; margin-bottom:15px; width:980px;
+}
+	.parentheader > h1 {
+		float: left; line-height:34px; margin:0; font-weight:normal;
+	}
+
+.tag_package {
+	float:left; width:160px; margin:10px 0;
+}
+	.package_tag {
+		
+	}
+.package {
+	width:160px; margin:10px 0;
 }

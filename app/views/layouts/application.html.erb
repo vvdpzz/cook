@@ -8,6 +8,21 @@
 </head>
 <body>
 	<div id="container">
+		<div id="menu">
+			<% if user_signed_in? %>
+				<div class="micro_gravatar">
+					<%= image_tag current_user.gravatar_url(:size => 20) %>
+				</div>
+				<%= link_to current_user.profile.full_name, current_user %> 
+				<%= link_to current_user.reputation %> | 
+				<%= link_to "注销", destroy_user_session_path %>
+			<% else %>
+				<%= link_to "使用OpenID登录", new_user_session_path %>
+			<% end %>
+		</div>
+		<div id="return0">
+			<%= link_to image_tag("return0.png"), root_url %>
+		</div>
 		<%= tabs_tag(:builder => ApplicationHelper::NavTabBuilder, :open_tabs => { :class => "navigation" }) do |tab| %>
 			<%= tab.questions	'问题',	questions_path %>
 			<%= tab.tags		'标签',	tags_path %>

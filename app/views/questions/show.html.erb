@@ -10,9 +10,19 @@
 			<div class="post-text">
 				<%= safe_html @question.html_body %>
 			</div>
+			<div class="permission">
+				<%= link_to '编辑', [:edit,@question] if current_user and current_user.id == @question.user_id %>
+			</div>
+			<div class="user_stats">
+				<div class="timestamp">
+					ask <span style="font-weight:bold"><%= time_ago_in_words @question.created_at %></span> ago
+				</div>
+				<%= render :partial => 'partials/user', :object => @question.user %>
+			</div>
+			<%= render :partial => 'partials/comment', :object => @question, :as => :qora %>
 		</div>
 	</div>
-	<div class="answers">
+	<div id="answers">
 		<div id="answers-header">
 			<div class="subheader">
 				<h2><%= "#{@question.answers.size} 个答案" if @question.answers.present? %></h2>

@@ -3,8 +3,8 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   
   # validations
-  validates_presence_of :body,  :on => :create, :message => "can't be blank"
-  validates_length_of   :body,  :minimum => 15, :too_short => "please enter at least 15 character"
+  # validates_presence_of :body,  :on => :create, :message => "can't be blank"
+  # validates_length_of   :body,  :minimum => 15, :too_short => "please enter at least 15 character"
   
   # vote plugin
   acts_as_voteable
