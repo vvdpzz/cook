@@ -290,3 +290,11 @@
 .package {
 	width:160px; margin:10px 0;
 }
+
+/* accept answer */
+.accept {
+	float:left; width:40px; height:40px; background:url(/images/accept.png) no-repeat;
+}
+.accepted {
+	float:left; width:40px; height:40px; background:url(/images/accepted.png) no-repeat;
+}
