@@ -1,0 +1,18 @@
+<table class="stats_table">
+	<tr>
+		<th><%= Question.all.count %></th>
+		<th>问题</th>
+	</tr>
+	<tr>
+		<th><%= Answer.all.count %></th>
+		<th>答案</th>
+	</tr>
+	<tr>
+		<th><%= number_to_percentage( 1 - Question.unanswered.count / Question.all.count, :precision => 1 ) %></th>
+		<th>解决</th>
+	</tr>
+	<tr>
+		<th><%= User.all.count %></th>
+		<th>用户</th>
+	</tr>
+</table>

@@ -3,7 +3,14 @@
 	<div class="voted">
 		<%= to_k question.voted %> 投票
 	</div>
-	<div class="answered">
+	<% if question.accepted != 0
+      answer_status = "acp"
+    elsif question.answers.count > 0
+      answer_status = "ans"
+    else
+      answer_status = "una"
+    end %>
+	<div class="answered <%= answer_status %>">
 		<%= to_k question.answered %> 答案
 	</div>
 	<div class="viewed">

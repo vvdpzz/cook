@@ -1,3 +1,4 @@
+<div id="list">
 <div class="subheader">
 	<h1><%= params[:tag] %></h1>
 	<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
@@ -7,4 +8,5 @@
 	<% end %>
 </div>
 <%= render :partial => 'partials/question', :collection => @questions %>
+</div>
 <%= will_paginate @questions %>

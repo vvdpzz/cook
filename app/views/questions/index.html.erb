@@ -1,3 +1,4 @@
+<div id="list">
 <div class="subheader">
 	<h1>全部问题</h1>
 	<%= tabs_tag(:namespace => :navigation, :builder => ApplicationHelper::MenuTabBuilder, :open_tabs => { :class => "tabs" }) do |tab| %>
@@ -6,7 +7,9 @@
 		<%= tab.vote	'最多投票',	questions_vote_url %>
 	<% end %>
 </div>
-<div id="list">
 	<%= render :partial => 'partials/question', :collection => @questions %>
 </div>
+<!-- <div id="sidebar">
+	<%= render 'partials/site_stats' %>
+</div> -->
 <%= will_paginate @questions %>

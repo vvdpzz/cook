@@ -2,7 +2,7 @@
 	width:980px; margin:0 auto; padding:0 20px;
 }
 #wrapper {
-	float:left;
+	float:left; width:100%;
 }
 #return0 {
 	float:left;
@@ -15,28 +15,43 @@
 #menu > .micro_gravatar {
 	float:left; width:20px; height:20px; margin-right:5px;
 }
-.list {
-	float:left;
+#list {
+	float:left; width:730px;
 }
+#sidebar {
+	float:left; margin-left:30px;
+}
+	.stats_table th {
+		text-align:left; width:60px;
+	}
 .question {
 	float:left;
-	width:730px;
+	width:100%;
 	padding:11px 0 10px;
 	border-bottom:1px solid #D0DEF2;
 }
 .stats {
 	float:left;
-	width:80px;
+	width:60px;
 	text-align:right;
 }
 	.stats > .voted {
-		
+		color: #666;
 	}
 	.stats > .answered {
 		
 	}
 	.stats > .viewed {
-		
+		color: #BDBDBD;
+	}
+	.acp {
+		color: #008C00;
+	}
+	.ans {
+		color: #FF8C00;
+	}
+	.una {
+		color: #D20;
 	}
 .stats > div {
 	margin:0 0 7px;
@@ -45,7 +60,7 @@
 		margin-bottom:0;
 	}
 .summary {
-	margin-left: 90px;
+	margin-left: 75px;
 }
 	.summary > h3 {
 		margin:0 0 5px;
@@ -61,7 +76,7 @@
 	float:left;
 }
 	.tag {
-		float:left; margin-right:7px;
+		float:left; margin-right:7px; background-color:#F1F5EC; color: #063; padding:1px 4px;
 	}
 .subheader{
 	clear: both; border-bottom:1px solid #d0def2; height:34px; margin-bottom:15px;
@@ -78,7 +93,7 @@
 		display:inline; margin:0 5px;
 	}
 	.navigation a {
-		border:1px solid #d0def2; padding:5px 10px; font-size:16px; color:#444;
+		border:1px solid #d0def2; padding:5px 21px; font-size:16px; color:#444;
 	}
 		.navigation a:hover {
 			background:#d0def2; color:white;
@@ -129,8 +144,11 @@
 		margin-left:50px;
 	}
 	.post-text {
-		float: left; width: 100%; line-height:1.4; white-space: pre-wrap; word-wrap: break-word;
+		float:left; width: 100%; line-height:1.4;
 	}
+		.post-text > p {
+			white-space: pre-wrap; word-wrap: break-word;
+		}
 
 /* vote */
 .voted_number {
@@ -233,9 +251,6 @@
 }
 .comment_area {
 	float:left; width:678px; height:40px; padding:0; margin:0; font-size:13px; color:#444;
-}
-.comment_submit {
-	float:left; padding:0; margin:5px 0;
 }
 
 /* pagination */

@@ -4,7 +4,7 @@
 	<div id='wmd-button-bar'></div>
     <%= f.text_area :body, :class => 'editor_element editor_body editor_fontstyle resizable', :id => 'wmd-input' %>
 	<div id='wmd-preview' class='editor_fontstyle'></div>
-	<%= f.submit %>
+	<%= f.submit '提交', :class => 'submit' %>
 	<% end %>
 </div>
 <%= javascript_include_tag 'jquery.tar', 'wmd', 'showdown', 'autocomplete-rails' %>
