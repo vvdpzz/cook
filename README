@@ -1,1 +1,45 @@
 git clone git@github.com:vvdpzz/cook.git
+
+Sphinx for Chinese
+
++ Download
+	http://sphinx-for-chinese.googlecode.com/files/sphinx-for-chinese-1.10.1-dev-r2287.tar.gz
+	http://sphinx-for-chinese.googlecode.com/files/xdict_1.1.tar.gz
+
++ Install
+	./configure --prefix=/usr/local/sphinx --with-mysql
+	make
+	sudo make install
+	
+	# generate dict
+	# unzip xdict_1.1.tar.gz to get xdict_1.1.txt
+	/usr/local/sphinx/bin/mkdict xdict_1.1.txt xdict
+	sudo cp xdict /usr/local/sphinx/etc/xdict
+	
+	sudo ln -s /usr/local/sphinx/bin/indexer /usr/bin/indexer
+	sudo ln -s /usr/local/sphinx/bin/search /usr/bin/search
+	sudo ln -s /usr/local/sphinx/bin/searchd /usr/bin/searchd
+	
+	sudo gem install thinking-sphinx --pre
+	# config Gemfile
+	gem 'thinking-sphinx', '2.0.0.rc2', :require => 'thinking_sphinx'
+	
+	bundle install
+	
+	# Add Chinese Support
+	# Modify config/*.sphinx.yml
+	charset_type = utf-8
+  	chinese_dictionary = /usr/local/sphinx/etc/xdict
+
+	rake thinking_sphinx:index
+	rake thinking_sphinx:start
+	
+	
+
++ some commands
+	rake thinking_sphinx:index
+	rake thinking_sphinx:start
+	rake thinking_sphinx:stop
+	rake thinking_sphinx:reindex
+	
+	

@@ -298,3 +298,7 @@
 .accepted {
 	float:left; width:40px; height:40px; background:url(/images/accepted.png) no-repeat;
 }
+
+#search {
+	float:right; margin-top:22px; width:180px; border:1px solid #d0def2; font-size:14px; padding:6px 2px;
+}

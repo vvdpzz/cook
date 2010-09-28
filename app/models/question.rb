@@ -8,6 +8,16 @@ class Question < ActiveRecord::Base
   # validations
   validate :tags_count_must_within_one_to_five
   
+  # Search Engine
+  define_index do
+    # fields
+    indexes title, :sortable => true
+    indexes body
+    
+    # attributes
+    has created_at, updated_at
+  end
+  
   # tag plugin
   acts_as_taggable
   acts_as_taggable_on :tags

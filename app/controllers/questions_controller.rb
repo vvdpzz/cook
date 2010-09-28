@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   set_tab :answer_vote,   :navigation, :only => %w(show answer_vote)
 
   def index
-    @questions = pagination Question.latest
+    @questions = pagination Question.latest.search params[:search]
   end
 
   def latest

@@ -47,6 +47,9 @@ gem 'tabs_on_rails'
 # Use unicorn as the web server
 gem 'unicorn'
 
+# Use Sphinx as the Search Engine
+gem 'thinking-sphinx', '2.0.0.rc2', :require => 'thinking_sphinx'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
