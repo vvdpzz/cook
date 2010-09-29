@@ -9,7 +9,7 @@
 }
 #menu {
 	float:right; border:1px solid #d0def2; border-top:0; padding:4px 12px;
-	border-radius:0 0 5px 5px;
+/*	border-radius:0 0 5px 5px;*/
 	line-height:22px;
 }
 #menu > .micro_gravatar {
@@ -238,7 +238,7 @@
 
 /* comments */
 .comments {
-	float:left; margin-top:10px; border-top: 1px dotted #AAA; font-size: 13px; line-height: 135%; padding-bottom: 10px; width: 100%;
+	float:left; margin-top:10px; border-top: 1px dashed #d0def2; font-size: 13px; line-height: 135%; padding-bottom: 10px; width: 100%;
 }
 .create_comment {
 	float:left; width:100%;
@@ -247,7 +247,7 @@
 	float:left;
 }
 .comment {
-	padding:5px 0; border-bottom:dotted 1px #ddd; line-height:17px; color:#555;
+	padding:5px 0; border-bottom:dotted 1px #d0def2; line-height:17px; color:#555;
 }
 .comment_area {
 	float:left; width:678px; height:40px; padding:0; margin:0; font-size:13px; color:#444;
@@ -301,4 +301,53 @@
 
 #search {
 	float:right; margin-top:22px; width:180px; border:1px solid #d0def2; font-size:14px; padding:6px 2px;
+}
+
+/* User show */
+#left_panel {
+	float:left; width:128px;
+}
+#center_panel {
+	float:left; width:300px; margin-left:50px;
+}
+#right_panel {
+	margin-left:528px; padding:10px; background-color: rgba(222, 237, 255, .4); height:160px;
+}
+	#center_panel table {
+		text-align:left;
+	}
+	#center_panel tr {
+		height:23px;
+	}
+	.label {
+		width:100px; color:#666;
+	}
+.big_gravatar {
+	float:left; width:100%; height:128px;
+	-webkit-box-shadow: 5px 5px 15px #aaa;
+}
+.grid {
+	float:left; width:100%; margin:15px 0;
+}
+.reputation {
+	font-size:45px; color:#555; text-align:center;
+}
+.change_avatar {
+	text-align:center;
+}
+.rp_label {
+	font-size:20px;
+}
+.profile_field {
+	border:1px solid #d0def2; width:220px; font-size:14px; padding:2px;
+}
+#edit_me {
+	clear:both;
+	width:980px;
+}
+#profile_sum {
+	float:left; width:100%;
+}
+#profile_opt {
+	float:right;
 }

@@ -1,0 +1,52 @@
+<div class="parentheader">
+	<h1><%= @profile.full_name %> - 编辑</h1>
+</div>
+<div id="left_panel">
+	<div class="big_gravatar">
+		<%= image_tag @user.gravatar_url(:size => 128) %>
+	</div>
+	<div class="grid">
+		<div class="change_avatar">
+			<%= link_to '更换头像', 'http://www.gravatar.com/' %>
+		</div>
+	</div>
+</div>
+<%= form_for(@profile,:url => { :action => 'update' }) do |f| %>
+<div id="center_panel">
+	<table>
+		<tbody>
+			<tr>
+				<td class = "label">姓</td>
+				<td><%= f.text_field :last_name, :class => 'profile_field' %></td>
+			</tr>
+			<tr>
+				<td class  = "label">名</td>
+				<td><%= f.text_field :first_name, :class => 'profile_field' %></td>
+			</tr>
+			<tr>
+				<td class  = "label">生日</td>
+				<td><%= f.text_field :birth, :class => 'profile_field' %></td>
+			</tr>
+			<tr>
+				<td class  = "label">性别</td>
+				<td><%= f.text_field :gender, :class => 'profile_field' %></td>
+			</tr>
+			<tr>
+				<td class  = "label">网站</td>
+				<td><%= f.text_field :website, :class => 'profile_field' %></td>
+			</tr>
+			<tr>
+				<td class  = "label">所在地</td>
+				<td><%= f.text_field :location, :class => 'profile_field' %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div id="edit_me">
+	<div id='wmd-button-bar'></div>
+    <%= f.text_area :me, :class => 'editor_element editor_body editor_fontstyle resizable', :id => 'wmd-input' %>
+	<div id='wmd-preview' class='editor_fontstyle'></div>
+</div>
+<%= f.submit '提交', :class => 'submit' %>
+<% end %>
+<%= javascript_include_tag 'jquery.tar', 'wmd', 'showdown', 'autocomplete-rails' %>

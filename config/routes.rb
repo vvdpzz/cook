@@ -26,6 +26,7 @@
   match 'questions/latest'  => 'questions#latest',  :via => 'get'
   match 'questions/active'  => 'questions#active',  :via => 'get'
   match 'questions/vote'    => 'questions#vote',    :via => 'get'
+  match 'search' => 'questions#search', :via => 'get'
   
   # Unanswered
   match 'unanswered'        => 'unanswered#index',  :via => 'get'

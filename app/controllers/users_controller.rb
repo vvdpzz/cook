@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  before_filter :find_user, :only => [:show, :edit, :update]
+  
   set_tab :users
   
   set_tab :rp,      :navigation, :only => %w(index rp)
@@ -21,9 +23,26 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
     @questions = pagination(@user.questions,5)
     @answers = pagination(@user.answers,5)
   end
+  
+  def edit
+    @profile = @user.profile
+  end
+  
+  def update
+    @profile = @user.profile
+    if @profile.update_attributes(params[:profile])
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+  
+  protected
+    def find_user
+      @user = User.find(params[:id])
+    end
   
 end

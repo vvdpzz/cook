@@ -30,7 +30,7 @@
 			<%= tab.unanswered	'待解决',	unanswered_path %>
 			<%= tab.ask			'提问',	new_question_path %>
 		<% end %>
-		<% form_tag questions_path, :method => :get do %>
+		<% form_tag search_path, :method => :get do %>
 		<%= text_field_tag :search, params[:search] %>
 		<% end %>
 		<div id="wrapper">

@@ -6,7 +6,6 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :last_name
       t.string :gender
       t.datetime :birth
-      t.integer :faction,     :default => 0
       t.string  :website,     :default => "http://"
       t.string  :location
       t.text :me,             :default => ""
