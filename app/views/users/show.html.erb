@@ -57,4 +57,11 @@
 <div id="right_panel">
 	<%= @user.profile.me %>
 </div>
+<div class="area_header">
+	<span class="summarycount"><%= @user.questions.count %></span>
+	<span class="summaryheader">问题</span>
+</div>
+<div class="list">
+	<%= render :partial => 'partials/question', :collection => @questions %>
+	<%= will_paginate @questions %>
 </div>

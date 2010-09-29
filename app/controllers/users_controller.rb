@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   
   def show
     @questions = pagination(@user.questions,5)
-    @answers = pagination(@user.answers,5)
   end
   
   def edit

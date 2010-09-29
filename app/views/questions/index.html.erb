@@ -9,7 +9,8 @@
 </div>
 	<%= render :partial => 'partials/question', :collection => @questions %>
 </div>
-<!-- <div id="sidebar">
-	<%= render 'partials/site_stats' %>
-</div> -->
+<div id="sidebar">
+	<%= render 'partials/intro' %>
+	<%= render 'partials/recent_tag' %>
+</div>
 <%= will_paginate @questions %>
